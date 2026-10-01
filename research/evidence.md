@@ -3,6 +3,8 @@
 Prepared 24 September 2026. The citation keys below match `references.bib`, which contains the full titles, dates, and source URLs. This is a research companion, not part of the 
 submitted essay's page count.
 
+Updated 1 October 2026 for Section 0, based on repository head `8fbd73ad2cf8fecc583f8d1934ad60458bbf3309`.
+
 ## What the evidence establishes
 
 1. FY2026 enactments were much higher than the president requested for NSF and NASA Science. This supports the claim that congressional intervention preserved funding.
@@ -12,8 +14,8 @@ achievements.
 4. The House committee's May FY2027 proposal also reduced NSF and NASA Science. Congress cannot be treated as a single consistently pro-research actor.
 5. Administrative actions can interrupt projects after Congress appropriates money. The documented NSF episode and the NIH impoundment decision establish different aspects of this 
 problem; they are not interchangeable legal findings.
-6. Research on NIH interruptions supports operational disruption, but does not establish a statistically significant publication loss. The paper does not convert budget cuts into 
-an estimated number of lost discoveries.
+6. Tham (2023) supports operational disruption but does not establish a statistically significant publication loss. Tham et al. (2026) separately estimates employment effects. These outcomes and studies must not be conflated; neither supplies a conversion from NSF cuts to lost discoveries.
+7. Section 0 defines the crisis in terms of continuity and threatened research capacity. Historical cancellation counts establish interruptions, while later reinstatements prevent treating them as current net losses. This definition is the essay's analytical choice, not a standardized statistical threshold.
 
 ## Source-by-source findings and limits
 
@@ -134,6 +136,16 @@ The Academic R&D section and Figure DISC-11 report approximately $38.1 billion i
 about 56%. The denominator is academic basic research, not all U.S. R&D, all university spending, or all federal science funding.
 
 ## Calculations and boundaries
+
+### Sources added for Section 0 (checked 1 October 2026)
+
+**`gaonsf2025` — direct government record.** Read the full report's online Appendix IV, discussion after table 31: https://files.gao.gov/reports/GAO-25-107576/index.html. GAO reports NSF's publicly listed terminations across directorates, rather than only awards at minority-serving institutions. The count is a June 2025 snapshot, not a current portfolio count. GAO attributes the terminations to agency priorities; it does not establish that each project failed scientific review or measure astrophysics losses.
+
+**`oliveira2026` — peer-reviewed descriptive study.** Read the complete article through Europe PMC's full-text XML: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13037894/fullTextXML. Methods include 2,291 of 2,295 listed grants with award-size information. Distinguish remaining funding from original award value. The discussion explicitly limits downstream causal claims. Do not import its multiplier-based economic projections as observed losses, or infer group-specific termination probabilities without the complete at-risk portfolio.
+
+**`tham2026` — peer-reviewed employment study.** Publication date, authors, DOI and published abstract verified against publisher-deposited Crossref metadata: https://api.crossref.org/works/10.1162/rest.a.1865. Census also lists the article as accepted/forthcoming: https://www.census.gov/topics/research/research-transparency-public-access/open-science/articles/forthcoming.html. The publisher's full text returned HTTP 403; the essay uses only the published abstract's design and single-R01 nonemployment result. Three percentage points is an absolute change (the abstract reports 40% relatively). It concerns earlier NIH renewals, not 2025 cancellations or astrophysics. No new analysis of the underlying restricted personnel records was performed.
+
+### Existing budget calculations
 
 All CSV monetary amounts are nominal millions of U.S. dollars of budget authority or congressional allocations. `analysis/make_figures.py` generates the two PDF/PNG figures and 
 writes the precise calculations to `analysis/derived_metrics.json` and `analysis/nasa_changes.csv`.

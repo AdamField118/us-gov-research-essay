@@ -10,7 +10,7 @@ Both the GOV 1301 research essay and its submitted proposal are now native Typst
 - `structure.typ` and `theme.typ`: the adapted WPI template.
 - `references.bib`: shared bibliography; each document prints only its cited sources.
 
-The essay is eight pages plus two pages of references. The proposal is two pages, including preliminary references. Both use 12-point Iosevka, one column, and double-spaced body text. The template's uppercase headings, Iosevka Extended title, running headers, unindented paragraphs, and page numbering are retained. Captions and bibliographies are single spaced.
+The essay now begins with Section 0, which establishes the funding crisis through documented award terminations and peer-reviewed research on funding interruptions. It is ten pages plus three pages of references. The proposal is two pages, including preliminary references. Both use 12-point Iosevka, one column, and double-spaced body text. The template's uppercase headings, Iosevka Extended title, running headers, unindented paragraphs, and page numbering are retained. Captions and bibliographies are single spaced.
 
 ## Build with the Typst CLI
 
@@ -51,7 +51,7 @@ Use the included `.gitignore`. It ignores `build/` but deliberately **keeps `fig
 
 ## Figures, data, and evidence
 
-The two figures, all numerical inputs, Python analysis, and research notes are unchanged from the LaTeX draft:
+The two figures, budget inputs, and Python analysis are unchanged from the LaTeX draft. The research notes include the evidence and limitations for the new Section 0:
 
 - `figures/`: vector PDF figures plus PNG previews.
 - `data/`: source CSVs and source identifiers.
