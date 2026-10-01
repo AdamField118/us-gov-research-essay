@@ -1,0 +1,20 @@
+{
+  "nsf_fy26_authorization_share_pct": 49.06908927770301,
+  "nsf_fy26_authorization_gap_musd": 9082,
+  "nsf_fy26_change_vs_enacted_pct": -3.4216335540838805,
+  "nsf_fy26_change_vs_adjusted_pct": -0.86109222750963,
+  "nsf_fy26_proposed_reduction_offset_pct": 93.98852001241079,
+  "nasa_science_fy26_proposed_reduction_offset_pct": 97.54275375007296,
+  "nasa_fy27_change_pct": {
+    "Exploration": 9.390980341770527,
+    "NASA total": -22.95249669576035,
+    "Science": -46.29103448275862,
+    "Planetary science": -26.188414922084046,
+    "Earth science": -52.56850905712959,
+    "Heliophysics": -52.03475080018289,
+    "Astrophysics": -65.36677115987462,
+    "Biological and physical sciences": -70.93023255813952
+  },
+  "house_fy27_nsf_change_pct": -19.999999999999996,
+  "house_fy27_science_change_pct": -17.24137931034483
+}

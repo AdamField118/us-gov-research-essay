@@ -1,0 +1,5 @@
+fiscal_year,authorization_musd,appropriation_musd,request_musd,unavailable_emergency_musd,authorization_source,appropriation_source,request_source,note
+2023,11897,9877,10492,0,harris2026_table6,harris2026_tableA1_note_b,harris2026_tableA1,"Includes FY2023 supplemental funding; uses reported total rather than sum of rounded components"
+2024,15647,9060,11315,0,harris2026_table6,harris2026_tableA1,harris2026_tableA1,"Congressional appropriations; excludes carryover in current-plan budgetary resources"
+2025,16707,9060,10183,234,harris2026_table6,harris2026_table1,harris2026_tableA1,"9060 is enacted; 234 MREFC emergency funding was not made available; adjusted comparison is 8826"
+2026,17832,8750,3903.2,0,harris2026_table6,congress2026_nsf_accounts,harris2026_table1,"Enacted total is sum of six NSF accounts; request rounded to 0.1 million in CRS"

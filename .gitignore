@@ -1,0 +1,15 @@
+# Compiled documents and local environments. Keep figures/*.pdf tracked:
+# these are source inputs to Typst, not disposable paper builds.
+/build/
+/.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
