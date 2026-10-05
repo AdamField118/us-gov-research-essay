@@ -2,12 +2,17 @@
 #import "structure.typ": conf
 #import "theme.typ": bibliography-style
 
-#let paper(kind: "Research Essay", proposal: false, body) = conf(
+#let paper(
+  kind: "Research Essay, Draft 1",
+  proposal: false,
+  date: "September 24, 2026",
+  body,
+) = conf(
   title: "Who Controls American Science?",
   subtitle: "Federal Funding and the Struggle Between Congress and the Executive Branch",
   authors: ("Adam Field": "Department of Physics, WPI"),
   course: "GOV 1301 -- " + kind,
-  date: "October 01, 2026",
+  date: date,
   paper-size: "us-letter",
   page-margin: 1in,
   column-count: 1,

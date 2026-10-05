@@ -1,4 +1,4 @@
-# Evidence record for Draft 1
+# Evidence record for the research essay
 
 Prepared 24 September 2026. The citation keys below match `references.bib`, which contains the full titles, dates, and source URLs. This is a research companion, not part of the 
 submitted essay's page count.
@@ -167,3 +167,15 @@ make key transcriptions reviewable. Full online sources remain linked in the bib
 Congress's FY2026 preservation of funds and the remaining authorization gap are direct descriptive findings. The claim that interruptions threaten a working research system draws 
 on the documented administrative episodes and the NIH study, with explicit limits. Bridge funding, transparent implementation reporting, and independent scientific review are the 
 author's recommendations; the sources do not experimentally establish that this exact combined policy would succeed.
+
+## Course integration and editorial revision (1 October 2026)
+
+Read the full eight-page `Syllabus for U.S. Government.pdf` and the 48-page course file `WPI US Government Fall A Term  O_Connor_15e_PPT_Ch06 (9-10-26)3.pdf`. Syllabus page 5 requests around seven pages excluding references, double spacing, and a critical assessment supported by broad reading. The revised essay has seven body pages and three reference pages.
+
+**`coursecongress2026` — assigned Congress slides.** The supplied title page identifies Pearson Education, *American Government: Roots and Reform*, fifteenth edition, 2024 Presidential Election Edition, Chapter 6, copyright 2026. PDF page 30 (section 6.5.2) addresses the budgetary function; page 32 (6.5.3) addresses oversight; page 39 (6.6.4) describes interest-group research and constituent mobilization. These directly support the essay's course connections. The citation identifies the course slides actually read, not an unread textbook chapter or an assumed lecturer.
+
+Rechecked the full GAO B-337203 decision, NSF's priorities FAQ, and NSF's historical narrative. GAO expressly excludes review of the legality of individual NIH terminations; the essay now states this boundary. NSF's FAQ distinguishes broader impacts from intellectual merit and records the 114-award/45-institution reinstatement episode. The historical narrative supports the 1947 veto over presidential control and the 1950 resolution.
+
+The recommendations distinguish delayed renewals (bridge funding), annual budget uncertainty (multiyear appropriations), and deliberate terminations (oversight of decisions and authority). Reporting is linked to committee questioning, GAO review, and possible subsequent legislation. These remain the author's proposals, not empirically proven effects. The tradeoff with future legislators' discretion and the right of elected officials to redirect priorities are explicit. The public rationale for cosmology is an argument about shared knowledge, not a biomedical patent-return estimate transplanted into astronomy.
+
+A final review narrowed the House committee example: a May FY2027 recommendation demonstrates willingness to reduce research funding; comparing it with the prior year's enactment does not by itself demonstrate contemporaneous disagreement within Congress.
