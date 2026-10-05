@@ -1,8 +1,10 @@
-"""Reproduce figures and metrics with Python/numpy/pandas/matplotlib, offline.
-Inputs are budget authority ($ millions), not outlays. See ten_year_methods.md.
-"""
+"""Download, extract, validate, and plot budget authority (not outlays)."""
 from pathlib import Path
 import json
+import os
+from extract_data import extract
+from download_sources import CACHE
+os.environ.setdefault("MPLCONFIGDIR", str(CACHE / "matplotlib"))
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -13,10 +15,13 @@ from matplotlib.ticker import PercentFormatter
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'figures'
 OUT.mkdir(exist_ok=True)
-nsf = pd.read_csv(ROOT/'data/nsf_budget.csv').set_index('fiscal_year')
-nasa = pd.read_csv(ROOT/'data/nasa_budget.csv').set_index('account')
-hist = pd.read_csv(ROOT/'data/nasa_history.csv')
-defl = pd.read_csv(ROOT/'data/gdp_deflators.csv').set_index('fiscal_year')
+tables = extract()
+nsf = tables['nsf_budget'].set_index('fiscal_year')
+nasa = tables['nasa_budget'].set_index('account')
+hist = tables['nasa_history']
+defl = tables['gdp_deflators'].set_index('fiscal_year')
+RESULTS = CACHE / 'analysis'
+RESULTS.mkdir(parents=True, exist_ok=True)
 years = np.arange(2017,2027)
 # Fail before plotting on coverage, duplication, inconsistent baselines or units.
 assert nsf.index.is_unique and np.array_equal(nsf.index,years)
@@ -27,7 +32,7 @@ for _,g in hist.groupby('account'):
     assert (g.budget_authority_musd>0).all()
 assert nsf.loc[2023,'appropriation_musd']==9877
 assert nsf.loc[2023,'baseline_musd']==8837
-assert np.isclose(7176.5+251+938.25+355+5.09+24.16,8750)
+assert np.isclose(nsf.loc[2026, 'appropriation_musd'], 8750)
 for col in ['fy2026_request_musd','fy2026_enacted_musd','fy2027_request_musd']:
     assert np.isclose(nasa.loc[nasa.level.eq('division'),col].sum(),nasa.loc['Science',col],atol=.25,rtol=0),col
 for yr in [2025,2026]:
@@ -105,7 +110,7 @@ history=pd.concat([nsf.appropriation_musd.rename('budget_authority_musd').reset_
  hist[['fiscal_year','account','budget_authority_musd']]],ignore_index=True).merge(defl.reset_index(),on='fiscal_year',validate='many_to_one')
 history['constant_fy2025_musd']=history.budget_authority_musd*defl.loc[2025,'gdp_price_index_fy2017_1']/history.gdp_price_index_fy2017_1
 history['real_index_fy2017_100']=history.groupby('account').constant_fy2025_musd.transform(lambda v:100*v/v.iloc[0])
-history.to_csv(ROOT/'analysis/ten_year_budget.csv',index=False,float_format='%.6f')
+history.to_csv(RESULTS/'ten_year_budget.csv',index=False,float_format='%.6f')
 comparison={}
 for account,g in history.groupby('account'):
     g=g.set_index('fiscal_year')
@@ -113,20 +118,23 @@ for account,g in history.groupby('account'):
       'nominal_change_2017_2026_pct':100*(g.loc[2026,'budget_authority_musd']/g.loc[2017,'budget_authority_musd']-1),
       'real_change_2017_2025_pct':100*(g.loc[2025,'constant_fy2025_musd']/g.loc[2017,'constant_fy2025_musd']-1),
       'real_change_2017_2026_pct_estimated_deflator':100*(g.loc[2026,'constant_fy2025_musd']/g.loc[2017,'constant_fy2025_musd']-1)}
+nsf25 = nsf.loc[2025, 'appropriation_musd']
+nsf26 = nsf.loc[2026, 'appropriation_musd']
+request26 = nsf.loc[2026, 'request_musd']
+authorization26 = nsf.loc[2026, 'authorization_musd']
+science = nasa.loc['Science']
 metrics={
- 'nsf_fy26_authorization_share_pct':100*8750/17832,
- 'nsf_fy26_authorization_gap_musd':17832-8750,
- 'nsf_fy26_change_vs_enacted_pct':100*(8750/9060-1),
- 'nsf_fy26_change_vs_adjusted_pct':100*(8750/8826-1),
- 'nsf_fy26_proposed_reduction_offset_pct':100*(8750-3903.2)/(9060-3903.2),
- 'nasa_science_fy26_proposed_reduction_offset_pct':100*(7250-3907.6)/(7334.2-3907.6),
+ 'nsf_fy26_authorization_share_pct':100*nsf26/authorization26,
+ 'nsf_fy26_authorization_gap_musd':authorization26-nsf26,
+ 'nsf_fy26_change_vs_enacted_pct':100*(nsf26/nsf25-1),
+ 'nsf_fy26_change_vs_adjusted_pct':100*(nsf26/adjusted.loc[2025]-1),
+ 'nsf_fy26_proposed_reduction_offset_pct':100*(nsf26-request26)/(nsf25-request26),
+ 'nasa_science_fy26_proposed_reduction_offset_pct':100*(science.fy2026_enacted_musd-science.fy2026_request_musd)/(science.fy2025_enacted_musd-science.fy2026_request_musd),
  'nasa_fy27_change_pct':a.change_pct.to_dict(),
- 'house_fy27_nsf_change_pct':100*(7000/8750-1),
- 'house_fy27_science_change_pct':100*(6000/7250-1),
  'ten_year_comparison':comparison,
  'nsf_real_change_2020_2026_pct_estimated_deflator':100*(nsf_real.loc[2026]/nsf_real.loc[2020]-1),
  'nsf_real_change_2017_2025_adjusted_pct':100*(adjusted_real.loc[2025]/nsf_real.loc[2017]-1),
  'note':'Real values use OMB FY2027 GDP price indices, not research-specific costs; FY2026 index is estimated. Ten observations span nine annual changes.'}
-(ROOT/'analysis/derived_metrics.json').write_text(json.dumps(metrics,indent=2)+'\n')
-a.to_csv(ROOT/'analysis/nasa_changes.csv')
+(RESULTS/'derived_metrics.json').write_text(json.dumps(metrics,indent=2)+'\n')
+a.to_csv(RESULTS/'nasa_changes.csv')
 print(json.dumps(metrics,indent=2))

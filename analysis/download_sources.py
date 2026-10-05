@@ -1,24 +1,58 @@
-"""Download and hash-check pinned source documents. Existing files are checked too.
-Run: python analysis/download_sources.py
-Plots use checked-in CSVs and require no network or PDF/Excel libraries.
+"""Fetch pinned sources and original template fonts into an ignored cache.
+
+Existing bytes are checked too. Changed publisher bytes cause a hard failure.
+Delete a corrupted cache entry to redownload; review before changing any pin.
 """
-from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
-import json
+from pathlib import Path
+import tempfile
+import time
+import urllib.error
 import urllib.request
-ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'research/raw'
-OUT.mkdir(exist_ok=True)
-for row in json.loads((ROOT/'research/ten_year_sources.json').read_text()):
-    dest=OUT/row['file']
+
+from inputs import SOURCES, FONTS
+
+ROOT = Path(__file__).resolve().parents[1]
+CACHE = ROOT / ".cache"
+
+
+def fetch(name, url, digest, directory):
+    directory.mkdir(parents=True, exist_ok=True)
+    dest = directory / name
     if dest.exists():
-        payload=dest.read_bytes()
+        payload = dest.read_bytes()
     else:
-        request=urllib.request.Request(row['url'],headers={'User-Agent':'Academic budget research'})
-        with urllib.request.urlopen(request,timeout=90) as response:
-            payload=response.read()
-    if hashlib.sha256(payload).hexdigest()!=row['sha256']:
-        raise ValueError(f"Source changed: {row['file']}; inspect before updating the pinned dataset")
+        for attempt in range(3):
+            try:
+                request = urllib.request.Request(url, headers={"User-Agent": "NSF-essay-reproducible-build/1.0"})
+                with urllib.request.urlopen(request, timeout=60) as response:
+                    payload = response.read()
+                break
+            except (urllib.error.URLError, TimeoutError):
+                if attempt == 2:
+                    raise
+                time.sleep(attempt + 1)
+    actual = hashlib.sha256(payload).hexdigest()
+    if actual != digest:
+        raise ValueError(f"SHA-256 mismatch for {name}: expected {digest}, got {actual}. "
+                         "Build stopped; inspect the source before changing its pin.")
     if not dest.exists():
-        dest.write_bytes(payload)
-    print(f"Verified {row['file']}")
+        with tempfile.NamedTemporaryFile(dir=directory, delete=False) as tmp:
+            tmp.write(payload)
+            pending = Path(tmp.name)
+        pending.replace(dest)
+        print(f"Downloaded and verified {name}")
+    return dest
+
+
+def prepare():
+    tasks = [(name, url, digest, CACHE / kind)
+             for kind, manifest in [("raw", SOURCES), ("fonts", FONTS)]
+             for name, (url, digest) in manifest.items()]
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        list(pool.map(lambda args: fetch(*args), tasks))
+
+
+if __name__ == "__main__":
+    prepare()
