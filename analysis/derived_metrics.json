@@ -16,5 +16,25 @@
     "Biological and physical sciences": -70.93023255813952
   },
   "house_fy27_nsf_change_pct": -19.999999999999996,
-  "house_fy27_science_change_pct": -17.24137931034483
+  "house_fy27_science_change_pct": -17.24137931034483,
+  "ten_year_comparison": {
+    "Exploration": {
+      "nominal_change_2017_2026_pct": 79.99537465309898,
+      "real_change_2017_2025_pct": 37.90772562453697,
+      "real_change_2017_2026_pct_estimated_deflator": 36.02008210768457
+    },
+    "NSF": {
+      "nominal_change_2017_2026_pct": 17.10385438972162,
+      "real_change_2017_2025_pct": -5.683978951828794,
+      "real_change_2017_2026_pct_estimated_deflator": -11.506193312384472
+    },
+    "Science": {
+      "nominal_change_2017_2026_pct": 25.82436653939604,
+      "real_change_2017_2025_pct": -0.9912377879923606,
+      "real_change_2017_2026_pct_estimated_deflator": -4.916219648306475
+    }
+  },
+  "nsf_real_change_2020_2026_pct_estimated_deflator": -15.063502061293798,
+  "nsf_real_change_2017_2025_adjusted_pct": -8.11995565439746,
+  "note": "Real values use OMB FY2027 GDP price indices, not research-specific costs; FY2026 index is estimated. Ten observations span nine annual changes."
 }

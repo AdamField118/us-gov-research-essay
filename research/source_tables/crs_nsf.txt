@@ -1,0 +1,73 @@
+PDF page 29
+                   The National Science Foundation (NSF): FY2026 Appropriations and Funding History
+
+
+
+
+
+                           Current                               Constant
+                              ($ millions)                         (FY2023 $ millions)
+
+ Fiscal Year  Authorization  Request   Appropriation  Authorization  Request   Appropriation
+
+    2014                    n/a       7,626             7,172                n/a       9,640             9,067
+
+    2015                    n/a       7,255             7,344                n/a       9,078             9,189
+
+    2016                    n/a       7,724             7,463                n/a       9,587             9,264
+
+    2017                    n/a       7,964             7,472                n/a       9,722             9,121
+
+    2018                    n/a       6,653             7,767                n/a       7,945             9,276
+
+    2019                    n/a       7,472             8,075                n/a       8,761             9,468
+
+    2020                    n/a       7,066             8,210                n/a       8,178             9,502
+
+    2021                    n/a       7,741             8,487                n/a       8,661             9,496
+
+    2022                    n/a     10,169             8,838                n/a     10,635             9,242
+
+    2023               11,897     10,492             8,837b           11,897     10,492             8,837
+
+    2024               15,647     11,315             9,060           15,240     11,020             8,824
+
+    2025               16,707     10,183             9,060           15,923       9,705             8,635
+
+    2026               17,832       3,903                n/a           16,649       3,644                n/a
+
+    2027               18,919          n/a                n/a           17,302          n/a                n/a
+
+    Sources: Funding data in the “Authorization” columns are from selected National Science Foundation (NSF)
+     authorization acts. Funding data in the “Request” and “Appropriation” columns are from NSF, Budget Internet
+     Information System, “NSF Requests and Appropriations History,” August 6, 2025; and the CHIPS and Science
+    Act (P.L. 117-167). To calculate constant FY2023 dollars, CRS used the gross domestic product (GDP) chained
+     price index found in White House, Table 10.1, “Gross Domestic Product and Deflators Used in the Historical
+     Tables: 1940–2029,” in Budget of the United States Government, Fiscal Year 2025, https://web.archive.org/web/
+     20250116091701/https://www.whitehouse.gov/wp-content/uploads/2024/03/hist10z1_fy2025.xlsx.
+    Notes: n/a = not available. The “Appropriation” column shows funding provided in annual appropriations acts
+     plus adjustments required in those acts, other laws, committee reports, etc. Adjustments include rescissions,
+     sequestration, funding transfers across NSF accounts, supplemental appropriations (not including American
+    Recovery and Reinvestment Act [ARRA], P.L. 111-5, funding in FY2009), and other changes. Resulting amounts
+    most closely align with NSF’s approved Current Plans. “Such sums” means “such sums as may be necessary” to
+     carry out agency powers and duties.
+      a.   FY2009 appropriation amounts do not include ARRA (P.L. 111-5) supplemental funding, which provided an
+          additional $3.002 billion to NSF. With ARRA included, total FY2009 appropriations to NSF were $9.496
+            billion in current dollars and $13.037 billion in constant (FY2023) dollars.
+      b.  FY2023 appropriation amounts do not include supplemental appropriations from Division N in P.L. 117-328,
+        which provided an additional $1.038 billion to NSF. With the supplemental funding included, total FY2023
+         appropriations to NSF were $9.877 billion.
+
+
+
+Author Information
+
+
+Laurie Harris
+Analyst in Science and Technology Policy
+
+
+
+
+
+Congressional Research Service                                                                     25

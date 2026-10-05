@@ -4,12 +4,14 @@
 
 #let paper(
   kind: "Research Essay, Draft 1",
+  title: "Who Controls American Science?",
+  subtitle: "Federal Funding and the Struggle Between Congress and the Executive Branch",
   proposal: false,
   date: "September 24, 2026",
   body,
 ) = conf(
-  title: "Who Controls American Science?",
-  subtitle: "Federal Funding and the Struggle Between Congress and the Executive Branch",
+  title: title,
+  subtitle: subtitle,
   authors: ("Adam Field": "Department of Physics, WPI"),
   course: "GOV 1301 -- " + kind,
   date: date,

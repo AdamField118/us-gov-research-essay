@@ -1,0 +1,58 @@
+PDF page 4
+                                      NASA Appropriations and Authorizations: A Fact Sheet
+
+
+
+                Table 1. NASA Budget Authority, FY2019-FY2024
+                                                      (in $ millions)
+                               FY2019   FY2020   FY2021   FY2022   FY2023   FY2024
+   Science                           $6,887    $7,143a    $7,291    $7,611    $7,792    $7,334
+   Earth Science                             1,931      1,972      1,997      2,061      2,175      2,195
+   Planetary Science                         2,747      2,713      2,693      3,120      3,217      2,717
+   Astrophysics                             1,191      1,306      1,356      1,394      1,510      1,530
+   James Webb Space Telescope             305       423       415       175     —b      —b
+   Heliophysics                           713       725       751       778       805       805
+   Biological and Physical Sciencesc      —         5        79        83        85        88
+   Aeronautics                        725      784      829      881      935      935
+  Space Technology                   927     1,100     1,100     1,100     1,193     1,100
+   Exploration                         5,045     5,960     6,397     6,855     7,448     7,666
+   Exploration Systems Development         4,087      4,513      4,539      4,591      4,717      4,533
+        Orion                               1,350      1,407      1,404      1,402      1,315      1,139
+       Space Launch System                  2,144      2,528      2,555      2,600      2,567      2,600
+         Exploration Ground Systems            593       578       580       589       835       794
+   Expl. R&D / Artemis Campaign Dev.        958      1,447      1,858      2,077      2,631          n/s
+   Other                 —    —    —       187       101          n/s
+  Space Operations                   4,640     4,135     4,102     3,975     4,267     4,220
+   International Space Station                 1,490      1,516      1,322      1,262      1,286          n/s
+   Space Transportation                     2,110      1,746      1,872      1,717      1,760          n/s
+   Space and Flight Support                  1,000       857       890       889       983          n/s
+   Commercial LEO Development             40        15        18       102       224       228
+   Exploration Operations          —    —    —         5        13          n/s
+  STEM Engagement                  110      120      127      137      144      143
+   Space Grant                             44        48        51        55        58        58
+  EPSCoR                                21        24        26        26        26        26
+  MUREP                                33        36        38        43        46        46
+   Other                                 12        12        12        14        14        14
+   Safety, Security, & Mission Svcs.      2,755     2,913d     2,937     3,021     3,137     3,129
+   Construction and EC&R              372      433      446      417      612e      300
+   Inspector General                    39       42       44       45       48       48
+   Total                             21,500   22,629ad    23,271    24,041   25,573e    24,875
+
+    Sources: FY2019-FY2023 from NASA FY2021-FY2025 congressional budget justifications. FY2024 from P.L.
+    118-42 and explanatory statement, Congressional Record, March 5, 2024, pp. S1141-S1142.
+    Notes: Except where noted, amounts include regular appropriations, supplemental appropriations, rescissions,
+     transfers, and reprogramming. Some totals may not add because of rounding. R&D = Research and
+    Development. LEO = Low Earth Orbit. STEM = Science, Technology, Engineering, and Mathematics. EPSCoR =
+     Established Program to Stimulate Competitive Research. MUREP = Minority University Research and Education
+    Program. EC&R = Environmental Compliance and Remediation. n/s = not specified.
+      a.  Not adjusted to reflect rescission of $70 million from prior year unobligated balances (Section 521(c)).
+      b.   Included in Astrophysics.
+      c.   Included in International Space Station before FY2021.
+      d.  Does not include additional $60 million appropriated by the CARES Act (P.L. 116-136).
+      e.   Includes $556.4 million in emergency supplemental funding provided in Division N of P.L. 117-328.
+
+
+
+
+
+Congressional Research Service                                                                      2

@@ -16,3 +16,7 @@ __pycache__/
 
 #ignore output
 *.pdf
+
+# Reproducible raw-source cache; keep vector figure inputs trackable.
+/research/raw/
+!figures/*.pdf
