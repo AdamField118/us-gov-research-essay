@@ -10,7 +10,6 @@ import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.ticker import PercentFormatter
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'figures'
@@ -89,22 +88,18 @@ bx.set(title='(b) NSF purchasing power',ylabel='FY2025 $ billions',ylim=(0,12))
 bx.set_yticks([0,3,6,9,12]);year_axis(bx)
 save(fig,'funding_gap')
 
-fig,(ax,bx)=plt.subplots(1,2,figsize=(8.8,3.7),layout='constrained',gridspec_kw={'width_ratios':[1,1.15]})
+# The manuscript uses enacted/adjusted history to compare congressional priorities.
+# FY2027 request comparisons remain available in the derived metrics only.
+fig,ax=plt.subplots(figsize=(6.4,3.1),layout='constrained')
 for account,color,marker,ls in [('Science',navy,'o','-'),('Exploration',gold,'s','--')]:
     v=hist.query('account==@account').set_index('fiscal_year').budget_authority_musd
     history_line(ax,real(v),color,marker,account,ls)
-ax.set(title='(a) NASA funding',ylabel='FY2025 $ billions',ylim=(0,10))
+ax.set(ylabel='FY2025 $ billions',ylim=(0,10))
 ax.set_yticks([0,2,4,6,8,10]);ax.legend(loc='lower right');year_axis(ax)
+save(fig,'nasa_priorities')
+
 order=['Exploration','NASA total','Science','Planetary science','Earth science','Heliophysics','Astrophysics','Biological and physical sciences']
 a=nasa.loc[order].copy();a['change_pct']=100*(a.fy2027_request_musd/a.fy2026_enacted_musd-1)
-y=np.arange(len(a))[::-1]
-bx.hlines(y,0,a.change_pct,color=navy,lw=1.6);bx.scatter(a.change_pct,y,color=navy,s=27,zorder=3)
-bx.axvline(0,color=gray,lw=.8);bx.axhline(4.5,color='.8',lw=.6)
-bx.set(yticks=y,yticklabels=['Exploration','NASA total','Science total','Planetary','Earth','Heliophysics','Astrophysics','Bio./physical'],
-       xlim=(-82,19),ylim=(-.6,7.6),xlabel='Change from FY2026',title='(b) FY2027 request')
-bx.set_xticks([-80,-60,-40,-20,0]);bx.xaxis.set_major_formatter(PercentFormatter())
-bx.grid(axis='x',color='.9',lw=.65);bx.set_axisbelow(True)
-save(fig,'nasa_priorities')
 
 history=pd.concat([nsf.appropriation_musd.rename('budget_authority_musd').reset_index().assign(account='NSF'),
  hist[['fiscal_year','account','budget_authority_musd']]],ignore_index=True).merge(defl.reset_index(),on='fiscal_year',validate='many_to_one')
